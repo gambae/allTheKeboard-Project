@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}"
+      layout:fragment="Content"
+>
+<head>
+    <style>
+        .fileform {
+            margin : 40px;
+            padding: 20px;
+            border: 1px solid lightgray;
+            background-color: white;
+        }
+        .fieldError {
+            color:red; font-size:small; margin-top:-15px; margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title page -->
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-03.jpg');">
+        <h2 class="ltext-105 cl-1 txt-center">
+            Register
+        </h2>
+    </section>
+
+    <!-- Content page -->
+    <section class="bg0 p-t-104 p-b-116" style="background-color:#FAFAFA;">
+        <div class="container" style="margin-left:195px;">
+            <div class="flex-w flex-tr">
+                <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+
+                    <form role="form" method="post" enctype="multipart/form-data" th:object="${itemFormDto}">
+
+                        <input type="hidden" th:field="*{id}">
+
+                        <div class="form-group">
+                            <select th:field="*{itemSellStatus}" class="custom-select">
+                                <option value="SELL">판매중</option>
+                                <option value="SOLD_OUT">품절</option>
+                            </select>
+                        </div>
+
+                        <div class="bor8 m-b-20 how-pos4-parent">
+                            <input type="text" th:field="*{itemNm}" class="form-control" placeholder="상품명을 입력해주세요">
+                        </div>
+                        <p th:if="${#fields.hasErrors('itemNm')}" th:errors="*{itemNm}" class="fieldError">Incorrect data</p>
+
+                        <div class="bor8 m-b-20 how-pos4-parent">
+                            <input type="number" th:field="*{price}" class="form-control" placeholder="상품의 가격을 입력해주세요">
+                        </div>
+                        <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="fieldError">Incorrect data</p>
+
+                        <div class="bor8 m-b-20 how-pos4-parent">
+                            <input type="number" th:field="*{stockNumber}" class="form-control" placeholder="상품의 재고를 입력해주세요">
+                        </div>
+                        <p th:if="${#fields.hasErrors('stockNumber')}" th:errors="*{stockNumber}" class="fieldError">Incorrect data</p>
+
+                        <div class="bor8 m-b-30">
+                            <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" th:field="*{itemDetail}" placeholder="상품 상세내용"></textarea>
+                        </div>
+                        <p th:if="${#fields.hasErrors('itemDetail')}" th:errors="*{itemDetail}" class="fieldError">Incorrect data</p>
+
+                        <div th:if="${#strings.isEmpty(itemFormDto.id)}">
+                        <button th:formaction="@{/admin/item/new}" type="submit" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+                            상품 등록
+                        </button>
+                        </div>
+
+                        <div th:unless="${#strings.isEmpty(itemFormDto.id)}">
+                        <button th:formaction="@{'/admin/item/' + ${itemFormDto.id} }" type="submit" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+                            상품 수정
+                        </button>
+                        </div>
+
+                </div>
+
+                        <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+
+                            <!-- 상품 이미지 정보를 담고 있는 리스트가 비어 있어서 상품을 등록하는 경우-->
+                            <div th:if="${#lists.isEmpty(itemFormDto.itemImgDtoList)}" class="flex-w w-full p-b-42">
+                                <div th:each="num:${#numbers.sequence(1,3)}" class="fileform">
+                                    <input type="file" name="itemImgFile">
+                                </div>
+                            </div>
+
+                            <!-- 상품 이미지 정보를 담고 있는 리스트가 비어 있지 않아서 상품을 수정하는 경우-->
+                            <div th:if="${not #lists.isEmpty(itemFormDto.itemImgDtoList)}" class="flex-w w-full p-b-42">
+                                <div th:each="itemImgDto,status:${itemFormDto.itemImgDtoList}" class="fileform">
+                                    <input type="file" name="itemImgFile">
+                                    <input type="hidden" name="itemImgIds" th:value="${itemImgDto.id}">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+         $('.js-pscroll').each(function(){
+             $(this).css('position','relative');
+             $(this).css('overflow','hidden');
+             var ps = new PerfectScrollbar(this, {
+                 wheelSpeed: 1,
+                 scrollingThreshold: 1000,
+                 wheelPropagation: false,
+             });
+
+             $(window).on('resize', function(){
+                 ps.update();
+             })
+         });
+
+         $(".js-select2").each(function(){
+             $(this).select2({
+                 minimumResultsForSearch: 20,
+                 dropdownParent: $(this).next('.dropDownSelect2')
+             });
+         })
+
+         $(document).ready(function(){
+             var errorMessage = [[${errorMessage}]];
+             if(errorMessage != null){
+                 alert(errorMessage);
+             }
+
+             bindDomEvent();
+
+         });
+
+         function bindDomEvent(){
+             $(".custom-file-input").on("change", function() {
+                 var fileName = $(this).val().split("\\").pop();  //이미지 파일명
+                 var fileExt = fileName.substring(fileName.lastIndexOf(".")+1); // 확장자 추출
+                 fileExt = fileExt.toLowerCase(); //소문자 변환
+                 console.log("111");
+                 if(fileExt != "jpg" && fileExt != "jpeg" && fileExt != "gif" && fileExt != "png" && fileExt != "bmp"){
+                     alert("이미지 파일만 등록이 가능합니다.");
+                     return;
+                 }
+
+                 $(this).siblings(".custom-file-label").html(fileName);
+             });
+         }
+
+    </script>
+
+</body>
+</html>
