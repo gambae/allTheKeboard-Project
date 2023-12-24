@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}"
+      layout:fragment="Content"
+>
+<head>
+    <style>
+        .memberfom {
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bg0 { background-color:#FAFAFA;}
+
+        .fieldError {
+            color:red; font-size:x-small; margin-top:-15px; margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Title page -->
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+        <h2 style="color:#202020;" class="ltext-105 cl-1 txt-center">
+            Sign up
+        </h2>
+    </section>
+
+
+    <!-- Content page -->
+    <section class="bg0 p-t-104 p-b-116">
+        <div class="container memberfom">
+            <form action="/members/new" role="form" method="post"  th:object="${memberFormDto}" style="zoom:120%; width:30%;">
+
+                <div class="bor19 size-218 m-b-20">
+                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" th:field="*{id}" placeholder="아이디">
+                </div>
+                <p th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="fieldError"></p>
+
+                <div class="bor19 size-218 m-b-20">
+                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" th:field="*{password}" placeholder="비밀번호">
+                </div>
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError"></p>
+
+                <div class="bor19 size-218 m-b-30">
+                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" th:field="*{name}" placeholder="이름">
+                </div>
+                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="fieldError"></p>
+
+                <div class="bor19 size-218 m-b-30">
+                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" th:field="*{email}" placeholder="이메일">
+                </div>
+                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError"></p>
+
+                <div class="bor19 size-218 m-b-30">
+                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" th:field="*{address}" placeholder="주소">
+                </div>
+                <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError"></p>
+
+                <div class="bor19 size-218 m-b-30">
+                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" th:field="*{phone_number}" placeholder="핸드폰 번호">
+                </div>
+                <p th:if="${#fields.hasErrors('phone_number')}" th:errors="*{phone_number}" class="fieldError"></p>
+
+                <button type="submit" class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04">
+                    회원가입
+                </button>
+                <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"> -->
+            </form>
+        </div>
+    </section>
+
+    <script>
+        $('.js-pscroll').each(function(){
+            $(this).css('position','relative');
+            $(this).css('overflow','hidden');
+            var ps = new PerfectScrollbar(this, {
+                wheelSpeed: 1,
+                scrollingThreshold: 1000,
+                wheelPropagation: false,
+            });
+
+            $(window).on('resize', function(){
+                ps.update();
+            })
+        });
+
+        $(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+    </script>
+</body>
+</html>

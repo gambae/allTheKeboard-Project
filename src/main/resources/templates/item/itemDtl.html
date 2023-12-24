@@ -1,0 +1,528 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}"
+      layout:fragment="Content"
+>
+<head>
+    <style>
+        .js-select2 {
+            border: 1px solid #e8e8e8;
+            width: 100%;
+            height: 50px;
+            color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <!-- breadcrumb -->
+    <div class="container" style="visibility: hidden;">
+        <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+            <a href="index3.html" class="stext-109 cl8 hov-cl1 trans-04">
+                Home
+                <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+            </a>
+
+            <a href="product.html" class="stext-109 cl8 hov-cl1 trans-04">
+                Men
+                <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+            </a>
+
+            <span class="stext-109 cl4">
+                Lightweight Jacket
+            </span>
+        </div>
+    </div>
+
+    <input type="hidden" id="itemId" th:value="${item.id}">
+    <!-- Product Detail -->
+    <section class="sec-product-detail bg0 p-t-65 p-b-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-7 p-b-30">
+                    <div class="p-l-25 p-r-30 p-lr-0-lg">
+                        <div class="wrap-slick3 flex-sb flex-w">
+
+                            <div class="wrap-slick3-dots"></div>
+                            <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+                            <div class="slick3 gallery-lb">
+                                <div class="item-slick3" th:each="itemImg : ${item.itemImgDtoList}" th:data-thumb="${itemImg.imgUrl}">
+                                    <div class="wrap-pic-w pos-relative">
+                                        <img th:src="${itemImg.imgUrl}" th:alt="${item.itemNm}">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" th:href="${itemImg.imgUrl}">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-5 p-b-30">
+                    <div class="p-r-50 p-t-5 p-lr-0-lg">
+
+                        <h1 th:text="${item.itemNm}" class="mtext-105 cl2 js-name-detail p-b-14" style="font-size:27px; font-weight:bold;"></h1>
+
+                        <input type="hidden" th:value="${item.price}" id="price" name="price">
+                        <span th:text="${item.price}+'원'" class="mtext-106 cl2" style="font-size:25px; color:orange;"></span>
+
+                        <p class="stext-102 cl3 p-t-23" style="color:#666666;">
+                            배송방법&ensp;-&ensp;택배&ensp;/&ensp;배송비&ensp;-&ensp;3000원
+                        </p>
+
+                        <!--  -->
+                        <div class="p-t-33">
+
+                            <div class="flex-w flex-r-m p-b-10">
+                                <div class="size-203 flex-c-m respon6">
+                                    스위치
+                                </div>
+
+                                <div class="size-204 respon6-next">
+                                    <select class="js-select2" name="time">
+                                        <option>[필수] 옵션을 선택해 주세요</option>
+                                        <option>청축</option>
+                                        <option>적축</option>
+                                        <option>흑축</option>
+                                        <option>백축</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                            </div>
+
+                            <div class="flex-w flex-r-m p-b-10">
+                                <div class="size-203 flex-c-m respon6">
+                                    각인
+                                </div>
+
+                                <div class="size-204 respon6-next">
+                                    <select class="js-select2" name="time">
+                                        <option>[필수] 옵션을 선택해 주세요</option>
+                                        <option>한글</option>
+                                        <option>영문</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                            </div>
+
+                            <div class="flex-w flex-r-m p-b-10">
+
+                                <div class="size-204 flex-w flex-m respon6-next">
+
+                                    <div style="display:flex; margin-left:-105px;" >
+                                        <div class="size-203 flex-c-m respon6">
+                                            결제 금액
+                                        </div>
+
+                                        <div class="wrap-num-product flex-w m-r-20 m-tb-10" style="margin-top:20px; margin-bottom:30px;">
+                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                                <i class="fs-16 zmdi zmdi-minus"></i>
+                                            </div>
+
+                                            <input class="mtext-104 cl3 txt-center num-product" type="number" name="count" id="count" value="1" min="1" style="color:#666666;">
+
+                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                                                <i class="fs-16 zmdi zmdi-plus"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="size-203 flex-c-m respon6" style="margin-left:54px; color:orange;">
+                                            <h4 name="totalPrice" id="totalPrice" style="font-weight:bold;"></h4>
+                                        </div>
+
+                                    </div>
+
+                                    <div style="display:flex;">
+                                        <button type="button" style="min-width:147px; margin-right:20px;" onclick="addCart()" class="flex-c-m stext-101 cl0 size-101 bg1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                                            장바구니
+                                        </button>
+
+                                        <button type="button" style="min-width:147px;" onclick="order()" class="flex-c-m stext-101 cl0 size-101 bg7 hov-btn3 p-lr-15 trans-04 js-addcart-detail">
+                                            바로 구매
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="bor10 m-t-50 p-t-43 p-b-40">
+                <!-- Tab01 -->
+                <div class="tab01">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item p-b-10">
+                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
+                        </li>
+
+                        <li class="nav-item p-b-10">
+                            <a class="nav-link" data-toggle="tab" href="#information" role="tab">Additional information</a>
+                        </li>
+
+                        <li class="nav-item p-b-10">
+                            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content p-t-43">
+                        <!-- - -->
+                        <div class="tab-pane fade show active" id="description" role="tabpanel">
+                            <div class="how-pos2 p-lr-15-md">
+                                <p class="stext-102 cl6">
+                                    <img th:src="${item.itemDetail}">
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- - -->
+                        <div class="tab-pane fade" id="information" role="tabpanel">
+                            <div class="row">
+                                <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+                                    <ul class="p-lr-28 p-lr-15-sm">
+                                        <li class="flex-w flex-t p-b-7">
+                                                <span class="stext-102 cl3 size-205">
+                                                    Weight
+                                                </span>
+
+                                            <span class="stext-102 cl6 size-206">
+                                                    0.79 kg
+                                                </span>
+                                        </li>
+
+                                        <li class="flex-w flex-t p-b-7">
+                                                <span class="stext-102 cl3 size-205">
+                                                    Dimensions
+                                                </span>
+
+                                            <span class="stext-102 cl6 size-206">
+                                                    110 x 33 x 100 cm
+                                                </span>
+                                        </li>
+
+                                        <li class="flex-w flex-t p-b-7">
+                                                <span class="stext-102 cl3 size-205">
+                                                    Materials
+                                                </span>
+
+                                            <span class="stext-102 cl6 size-206">
+                                                    60% cotton
+                                                </span>
+                                        </li>
+
+                                        <li class="flex-w flex-t p-b-7">
+                                                <span class="stext-102 cl3 size-205">
+                                                    Color
+                                                </span>
+
+                                            <span class="stext-102 cl6 size-206">
+                                                    Black, Blue, Grey, Green, Red, White
+                                                </span>
+                                        </li>
+
+                                        <li class="flex-w flex-t p-b-7">
+                                                <span class="stext-102 cl3 size-205">
+                                                    Size
+                                                </span>
+
+                                            <span class="stext-102 cl6 size-206">
+                                                    XL, L, M, S
+                                                </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- - -->
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <div class="row">
+                                <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+                                    <div class="p-b-30 m-lr-15-sm">
+                                        <!-- Review -->
+                                        <div class="flex-w flex-t p-b-68">
+                                            <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
+                                                <img src="images/avatar-01.jpg" alt="AVATAR">
+                                            </div>
+
+                                            <div class="size-207">
+                                                <div class="flex-w flex-sb-m p-b-17">
+                                                        <span class="mtext-107 cl2 p-r-20">
+                                                            Ariana Grande
+                                                        </span>
+
+                                                    <span class="fs-18 cl11">
+                                                            <i class="zmdi zmdi-star"></i>
+                                                            <i class="zmdi zmdi-star"></i>
+                                                            <i class="zmdi zmdi-star"></i>
+                                                            <i class="zmdi zmdi-star"></i>
+                                                            <i class="zmdi zmdi-star-half"></i>
+                                                        </span>
+                                                </div>
+
+                                                <p class="stext-102 cl6">
+                                                    Quod autem in homine praestantissimum atque optimum est, id deseruit. Apud ceteros autem philosophos
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Add review -->
+                                        <form class="w-full">
+                                            <h5 class="mtext-108 cl2 p-b-7">
+                                                Add a review
+                                            </h5>
+
+                                            <p class="stext-102 cl6">
+                                                Your email address will not be published. Required fields are marked *
+                                            </p>
+
+                                            <div class="flex-w flex-m p-t-50 p-b-23">
+                                                    <span class="stext-102 cl3 m-r-16">
+                                                        Your Rating
+                                                    </span>
+
+                                                <span class="wrap-rating fs-18 cl11 pointer">
+                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                                                        <input class="dis-none" type="number" name="rating">
+                                                    </span>
+                                            </div>
+
+                                            <div class="row p-b-25">
+                                                <div class="col-12 p-b-5">
+                                                    <label class="stext-102 cl3" for="review">Your review</label>
+                                                    <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="review" name="review"></textarea>
+                                                </div>
+
+                                                <div class="col-sm-6 p-b-5">
+                                                    <label class="stext-102 cl3" for="name">Name</label>
+                                                    <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="name" type="text" name="name">
+                                                </div>
+
+                                                <div class="col-sm-6 p-b-5">
+                                                    <label class="stext-102 cl3" for="email">Email</label>
+                                                    <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="email" type="text" name="email">
+                                                </div>
+                                            </div>
+
+                                            <button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
+                                                Submit
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        $(document).ready(function(){
+
+            calculateToalPrice();
+
+            $(".wrap-num-product").click(function(){
+                console.log("클릭 감지");
+                calculateToalPrice();
+            });
+        });
+
+        function calculateToalPrice(){
+            var count = $("#count").val();
+            var price = $("#price").val();
+            var totalPrice = price*count;
+            console.log('토탈프라이스'+totalPrice);
+            $("#totalPrice").html(totalPrice + '원');
+        }
+
+        $(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+
+        $('.parallax100').parallax100();
+
+        $('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+		        delegate: 'a', // the selector for gallery item
+		        type: 'image',
+		        gallery: {
+		        	enabled:true
+		        },
+		        mainClass: 'mfp-fade'
+		    });
+		});
+
+        $('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
+			e.preventDefault();
+		});
+
+		$('.js-addwish-b2').each(function(){
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-b2');
+				$(this).off('click');
+			});
+		});
+
+		$('.js-addwish-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-detail');
+				$(this).off('click');
+			});
+		});
+
+		/*---------------------------------------------*/
+
+		$('.js-addcart-detail').each(function(){
+
+			$(this).on('click', function(){
+
+				var token = $("meta[name='_csrf']").attr("content");
+				var header = $("meta[name='_csrf_header']").attr("content");
+
+				var url = "/cart";
+				var paramData = {
+					itemId : $("#itemId").val(),
+					count : $("#count").val()
+				};
+
+				var param = JSON.stringify(paramData);
+				console.log(param)
+				$.ajax({
+					url      : url,
+					type     : "POST",
+					contentType : "application/json",
+					data     : param,
+					beforeSend : function(xhr){
+						/* 데이터를 전송하기 전에 헤더에 csrf값을 설정 */
+						xhr.setRequestHeader(header, token);
+					},
+					dataType : "json",
+					cache   : false,
+					success  : function(result, status){
+						alert("상품을 장바구니에 담았습니다.");
+						location.href='/';
+					},
+					error : function(jqXHR, status, error){
+
+						if(jqXHR.status == '401'){
+							alert('로그인 후 이용해주세요');
+							location.href='/members/login';
+						} else{
+							alert(jqXHR.responseText);
+						}
+
+					}
+				});
+			});
+
+		});
+
+        $('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+
+        function order(){
+
+            console.log("주문 접수");
+
+            var url = "/order";
+            var paramData = {
+                itemId : $("#itemId").val(),
+                count : $("#count").val()
+            };
+
+            var param = JSON.stringify(paramData);
+
+            $.ajax({
+                url      : url,
+                type     : "POST",
+                contentType : "application/json",
+                data     : param,
+                dataType : "json",
+                cache   : false,
+                success  : function(result, status){
+                    alert("주문이 완료 되었습니다.");
+                    location.href='/';
+                },
+                error : function(jqXHR, status, error){
+
+                    if(jqXHR.status == '401'){
+                        alert('로그인 후 이용해주세요');
+                        location.href='/members/login';
+                    } else{
+                        alert(jqXHR.responseText);
+                    }
+                }
+            });
+        }
+
+        function addCart(){
+
+            var url = "/cart";
+            var paramData = {
+                itemId : $("#itemId").val(),
+                count : $("#count").val()
+            };
+
+            var param = JSON.stringify(paramData);
+
+            $.ajax({
+                url      : url,
+                type     : "POST",
+                contentType : "application/json",
+                data     : param,
+                dataType : "json",
+                cache   : false,
+                success  : function(result, status){
+                    alert("상품을 장바구니에 담았습니다.");
+                    location.href='/';
+                },
+                error : function(jqXHR, status, error){
+
+                    if(jqXHR.status == '401'){
+                        alert('로그인 후 이용해주세요');
+                        location.href='/members/login';
+                    } else{
+                        alert(jqXHR.responseText);
+                    }
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
