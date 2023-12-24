@@ -1,4 +1,6 @@
 ## 👀 프로젝트 소개
+![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/5d45fe90-c4f1-4b19-9e42-3ab9af8c8a4a)
+
 나만의 키보드 쇼핑몰 웹 사이트 개발 프로젝트
 
 https://www.naver.com
