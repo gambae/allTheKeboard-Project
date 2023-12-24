@@ -1,0 +1,108 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}"
+      layout:fragment="Content"
+>
+<head>
+    <style>
+        .bg0 { background-color:#FAFAFA;}
+    </style>
+</head>
+<body>
+    <!-- Title page -->
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-03.jpg');">
+        <h2 class="ltext-105 cl-1 txt-center">
+            Order
+        </h2>
+    </section>
+
+
+    <!-- Content page -->
+    <section class="bg0 p-t-75 p-b-120">
+        <div class="container" th:each="order : ${orders.getContent()}" style="margin-left:315px;">
+
+            <div class="card d-flex" style="width:75%; border-radius:20px; margin-bottom:40px;">
+
+                <div class="d-flex mb-3 align-self-center" style="margin-top:20px; margin-left:-500px;">
+                    <h3 th:text="${order.orderDate.substring(0,10)} + ' 주문'" style="color:#515151; font-weight:bold; margin-right:20px;"></h3>
+                    <div class="ml-3">
+                        <th:block th:if="${order.orderStatus == T(com.study.project.constant.OrderStatus).ORDER}">
+                            <button  style="height:26px;" type="button" class="flex-c-m stext-101 cl0 size-104 bg10 hov-btn1 p-lr-15 trans-04" th:value="${order.orderId}" onclick="cancelOrder(this.value)">주문취소</button>
+                        </th:block>
+                        <th:block th:unless="${order.orderStatus == T(com.study.project.constant.OrderStatus).ORDER}">
+                            <button  style="height:26px; background-color:green;" class="flex-c-m stext-101 cl0 size-104 bg10 hov-btn1 p-lr-15 trans-04">취소완료</button>
+                        </th:block>
+                    </div>
+                </div>
+
+                <div th:each="orderItem : ${order.orderItemDtoList}" class="d-flex mb-3">
+                    <div class="repImgDiv" style="margin-left:20px;">
+                        <img th:src="${orderItem.imgUrl}" class = "rounded repImg" th:alt="${orderItem.itemNm}" style="height:170px;">
+                    </div>
+                    <div class="align-self-center w-75" style="margin-left:65px; margin-bottom:25px;">
+                        <span th:text="${orderItem.itemNm}" class="fs24 font-weight-bold" style="font-size:25px; color:#515151;"></span>
+                        <div class="fs18 font-weight-light">
+                            <span th:text="${orderItem.orderPrice} +'원'" style="font-size:20px; font-weight:bold; color:orange;"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="margin-bottom:-70px;" th:with="start=${(orders.number/maxPage)*maxPage + 1}, end=(${(orders.totalPages == 0) ? 1 : (start + (maxPage - 1) < orders.totalPages ? start + (maxPage - 1) : orders.totalPages)})" >
+            <ul class="pagination justify-content-center">
+                <li class="page-item" th:classappend="${orders.number eq 0}?'disabled':''">
+                    <a th:href="@{'/orders/' + ${orders.number-1}}" aria-label='Previous' class="page-link">
+                        <span aria-hidden='true'>이전</span>
+                    </a>
+                </li>
+
+                <li class="page-item" th:each="page: ${#numbers.sequence(start, end)}" th:classappend="${orders.number eq page-1}?'active':''">
+                    <a th:href="@{'/orders/' + ${page-1}}" th:inline="text" class="page-link">[[${page}]]</a>
+                </li>
+
+                <li class="page-item" th:classappend="${orders.number+1 ge orders.totalPages}?'disabled':''">
+                    <a th:href="@{'/orders/' + ${orders.number+1}}" aria-label='Next' class="page-link">
+                        <span aria-hidden='true'>다음</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <script>
+        function cancelOrder(orderId) {
+
+            var url = "/order/" + orderId + "/cancel";
+            var paramData = {
+                orderId : orderId,
+            };
+
+            var param = JSON.stringify(paramData);
+
+            $.ajax({
+                url      : url,
+                type     : "POST",
+                contentType : "application/json",
+                data     : param,
+                dataType : "json",
+                cache   : false,
+                success  : function(result, status){
+                    alert("주문이 취소 되었습니다.");
+                    location.href='/orders/' + [[${page}]];
+                },
+                error : function(jqXHR, status, error){
+                    if(jqXHR.status == '401'){
+                        alert('로그인 후 이용해주세요');
+                        location.href='/members/login';
+                    } else{
+                        alert(jqXHR.responseText);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
