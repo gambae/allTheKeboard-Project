@@ -95,19 +95,19 @@ https://15.164.140.175:8080
 
 ## ⭐ 주요 기능
 * <b>로그인/회원가입</b>
-    ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/e1598df0-827d-4524-bcb7-c8e8f62f0ccb)
+    
 * <b>상품 등록</b>
-    ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/e1598df0-827d-4524-bcb7-c8e8f62f0ccb)
+    
 * <b>상품관리</b>
-    ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/e1598df0-827d-4524-bcb7-c8e8f62f0ccb)
+   
 * <b>상품목록</b>
-    ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/e1598df0-827d-4524-bcb7-c8e8f62f0ccb)
+
 * <b>상품 상세 페이지</b>
-    ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/e1598df0-827d-4524-bcb7-c8e8f62f0ccb)
+   
 * <b>주문목록</b>
-    ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/e1598df0-827d-4524-bcb7-c8e8f62f0ccb)
+  
 * <b>장바구니</b>
-    ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/e1598df0-827d-4524-bcb7-c8e8f62f0ccb)
+
 
 ### 추후 개발 기능
  * <b>키보드 스위치 별 소리 확인</b>
