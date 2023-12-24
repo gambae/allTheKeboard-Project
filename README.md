@@ -69,6 +69,9 @@ https://www.naver.com
 ## 📌시스템 아키텍쳐
 ![images_prayme_post_6937cab3-5813-4b37-b4f5-b01c0eac7d7a_image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/36b56238-4ba0-495e-8971-76201f9cd92b)
 
+## 📌패키징 구조
+![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/74f411f0-942b-4cc9-885b-a2b85383f81a)
+
 ## 📌E-R Diagram
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/2e7e063b-c3f0-4fc3-ad9a-7ad46eb2559e)
 
