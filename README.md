@@ -96,11 +96,11 @@
 ## ⭐ 주요 기능
 * <b>로그인/회원가입</b>
 
-![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/4df21918-dab0-496d-9ce1-8c0bf8139681)
+<img src="https://github.com/gambae/allTheKeboard-Project/assets/103255941/4df21918-dab0-496d-9ce1-8c0bf8139681" width="800" height="400"/>
 
 * <b>상품 등록</b>
 
-![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/95f78494-5694-44d3-835c-407dd5241ba9)
+<img src="https://github.com/gambae/allTheKeboard-Project/assets/103255941/95f78494-5694-44d3-835c-407dd5241ba9" width="800" height="400"/>
 
 * <b>상품관리</b>
 
