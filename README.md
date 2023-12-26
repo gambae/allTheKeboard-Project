@@ -152,7 +152,7 @@ passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 
 파일에 관한 서비스 클래스를 따로 두어 등록, 삭제 기능을 메서드 형식으로 사용할 수 있도록 처리했습니다.
 <br><br>
 
-* <b>상품관리</b>
+* <b>상품 관리</b>
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/9c341565-3b26-4cd5-88e7-bf21e409cd52
 
@@ -174,6 +174,7 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/4c5f02bc-c0bb-4
 
 <br>
 동일하게 Querydsl을 사용하여 페이징 처리 및 상품명으로 검색이 가능하도록 구현하였습니다.
+<br>
 
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/22cc0ad2-64af-4e6f-b0fd-d586d8538607)
 
@@ -184,9 +185,22 @@ pagable 객체를 통해 보일 상품 개수와 페이지 수를 설정하였�
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/b97642ae-c85a-4084-a913-d2b578dec487
 
-* <b>주문목록</b>
+<br>
+주문 및 장바구니 추가 기능을 제공하며 상품 데이터를 보여주고 제이쿼리를 통해 즉각적으로 뷰단에 적용되도록 설계했습니다.
+<br><br>
+
+* <b>주문 목록</b>
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/c52d0162-7d41-4a93-963f-fc585422272c
+
+<br>
+상품을 주문하면 재고에서 주문 수량만큼 재고를 감소시키고 주문 수량이 재고 수보다 클 경우 주문이 되지않도록 설계했습니다.
+
+상품 주문에서 웹 페이지의 새로 고침 없이 서버에 주문을 요청하기 위해 비동기 방식을 사용하였습니다.
+
+<img src="https://github.com/gambae/allTheKeboard-Project/assets/103255941/6978888e-cd77-4524-9319-dfc9f22c6519" width="500" height="400">
+
+<br>
 
 * <b>장바구니</b>
 
