@@ -172,6 +172,14 @@ Querydsl을 이용해서 조건에 맞는 쿼리를 동적으로 쉽게 생성�
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/4c5f02bc-c0bb-4c3c-bac0-7af7271fae97
 
+<br>
+동일하게 Querydsl을 사용하여 페이징 처리 및 상품명으로 검색이 가능하도록 구현하였습니다.
+
+![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/22cc0ad2-64af-4e6f-b0fd-d586d8538607)
+
+pagable 객체를 통해 보일 상품 개수와 페이지 수를 설정하였습니다.
+<br><br>
+
 * <b>상품 상세 페이지</b>
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/b97642ae-c85a-4084-a913-d2b578dec487
