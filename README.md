@@ -83,17 +83,18 @@
 
 ## 📌시스템 아키텍쳐
 ![images_prayme_post_6937cab3-5813-4b37-b4f5-b01c0eac7d7a_image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/36b56238-4ba0-495e-8971-76201f9cd92b)
-<br>
+<br><br>
 
 ## 📌패키징 구조
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/74f411f0-942b-4cc9-885b-a2b85383f81a)
-<br>
+<br><br>
 
 ## 📌E-R Diagram
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/2e7e063b-c3f0-4fc3-ad9a-7ad46eb2559e)
 <br><br>
 
 ## 📌레이아웃
+<br>
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/0ed9032a-4217-4955-b364-da83c40a6367)
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/5c3c81f3-5123-4089-acf6-2a1d09e5e1f1)
 
@@ -111,8 +112,8 @@
 <br><br>
 
 ## ⭐ 주요 기능
-* <b>로그인/회원가입</b> 
-
+* <b>로그인/회원가입</b>
+<br>
 <img src="https://img.shields.io/badge/springsecurity-0ABF53F?style=for-the-badge&logo=springsecurity&logoColor=white">
 
 스프링 시큐리티를 활용하여 로그인/회원가입 기능을 구현하였습니다.
@@ -126,21 +127,26 @@ passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 
 아직 프로젝트에 적용해 보진 않았지만 나중에는 토큰 기반 인증 jwt를 적용해 볼 예정입니다.
 
 개인적으로는 이번 프로젝트에서 가장 개념적으로 어려웠던 부분이라고 생각합니다.
-<br>
+<br><br>
 
 * <b>상품 등록 및 수정</b>
-
+<br>
 관리자 계정으로만 접근할수있으며 
-상품 테이블과 상품 이미지 테이블의 연관관계 매핑을 중점적으로 설계하였습니다
+
+상품 테이블과 상품 이미지 테이블의 연관관계 매핑을 중점으로 설계하였습니다.
 
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/36d764a0-20bb-4459-b673-61169cbb1df2)
 
-다대일 단방향 관계로 매핑하였고 지연로딩을 설정하여 매핑된 상품 엔티티 정보가 필요할 경우 데이터를 조회하도록 하였습니다
+다대일 단방향 관계로 매핑하였으며 지연로딩을 설정하여 매핑된 상품 엔티티 정보가 필요 할 경우 데이터를 조회하도록 하였습니다.
 
-![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/e626bbd0-ce01-4f2b-af22-3015a32d8ec5)
+<img src="https://github.com/gambae/allTheKeboard-Project/assets/103255941/f183d99e-fdcd-417a-b558-f1742e3c9314" width="600" height="200">
 
 업로드한 파일에대한 경로,크기 설정을 하였고
 
+<img src="https://github.com/gambae/allTheKeboard-Project/assets/103255941/7454dca0-d2a1-47a0-b91a-98a73a1fed22" width="300" height="400">
+
+파일에 관한 서비스 클래스를 따로 두어 등록, 삭제 기능을 메서드 형식으로 사용할 수 있도록 처리했습니다.
+<br><br>
 
 * <b>상품관리</b>
 
