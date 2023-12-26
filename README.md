@@ -155,6 +155,7 @@ passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 
 * <b>상품관리</b>
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/9c341565-3b26-4cd5-88e7-bf21e409cd52
+
 <br>
 상품을 조회하는 조건을 설정 후 페이징 기능을 통해 일정 개수의 상품만 불러오며
 
@@ -163,7 +164,7 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/9c341565-3b26-4
 조건은 상품 등록일,상품 판매 상태, 상품명 또는 상품 등록자 아이디로 설정하였습니다.
 
 Querydsl을 이용해서 조건에 맞는 쿼리를 동적으로 쉽게 생성하고 비슷한 쿼리를 재활용할 수 있도록 하였습니다.
-<br>
+<br><br>
 
 * <b>상품목록</b>
 
