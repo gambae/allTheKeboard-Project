@@ -163,6 +163,8 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/9c341565-3b26-4
 
 조건은 상품 등록일,상품 판매 상태, 상품명 또는 상품 등록자 아이디로 설정하였습니다.
 
+![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/d1e9a23d-8edc-4585-865d-6131077c7c56)
+
 Querydsl을 이용해서 조건에 맞는 쿼리를 동적으로 쉽게 생성하고 비슷한 쿼리를 재활용할 수 있도록 하였습니다.
 <br><br>
 
