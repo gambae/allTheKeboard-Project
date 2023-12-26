@@ -195,7 +195,7 @@ passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 
 
 <br><br>
 
-### [상품 관리]
+### 상품 관리
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/9c341565-3b26-4cd5-88e7-bf21e409cd52
 
