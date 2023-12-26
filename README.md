@@ -93,6 +93,23 @@
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/2e7e063b-c3f0-4fc3-ad9a-7ad46eb2559e)
 <br><br>
 
+## 📌레이아웃
+![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/0ed9032a-4217-4955-b364-da83c40a6367)
+![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/5c3c81f3-5123-4089-acf6-2a1d09e5e1f1)
+
+원래는 Jsp를 사용했었는데 스프링부트에서는 타임리프를 권장하는것을 알게되었고
+
+사용해보니 문법적으로는 생소하지 않아서 어려웠지만
+
+비지니스로직과 분리되어서 view단에 집중할수있었고
+
+레이아웃기능을 통해 코드 길이를 획기적으로 줄일수있어서 
+
+훨신 수월하게 view 단을 만들수있었습니다.
+
+추후에는 vue.js 나 react를 공부해서 적용해 볼 예정입니다.
+<br>
+
 ## ⭐ 주요 기능
 * <b>로그인/회원가입</b> 
 
@@ -104,13 +121,25 @@
 
 시큐리티는 버전이 바뀔 때마다 deprecated 되는 게 많아서 관련 자료들을 찾는 것에 어려움이 많았습니다.
 
-passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 어려운 개념들을 완벽하게 이해하지는 못했지만 큰 흐름을 이해할 수 있어서 만족합니다.
+passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 어려운 개념들을 완벽하게 이해하지는 못했지만 큰 흐름을 이해할 수 있어서 만족스러운 공부였습니다.
 
 아직 프로젝트에 적용해 보진 않았지만 나중에는 토큰 기반 인증 jwt를 적용해 볼 예정입니다.
 
 개인적으로는 이번 프로젝트에서 가장 개념적으로 어려웠던 부분이라고 생각합니다.
 
-* <b>상품 등록</b>
+* <b>상품 등록 및 수정</b>
+
+관리자 계정으로만 접근할수있으며 
+상품 테이블과 상품 이미지 테이블의 연관관계 매핑을 중점적으로 설계하였습니다
+
+![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/36d764a0-20bb-4459-b673-61169cbb1df2)
+
+다대일 단방향 관계로 매핑하였고 지연로딩을 설정하여 매핑된 상품 엔티티 정보가 필요할 경우 데이터를 조회하도록 하였습니다
+
+![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/e626bbd0-ce01-4f2b-af22-3015a32d8ec5)
+
+업로드한 파일에대한 경로,크기 설정을 하였고
+
 
 * <b>상품관리</b>
 
