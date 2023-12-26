@@ -95,7 +95,9 @@
 
 ## 📌레이아웃
 <br>
+
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/0ed9032a-4217-4955-b364-da83c40a6367)
+
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/5c3c81f3-5123-4089-acf6-2a1d09e5e1f1)
 
 원래는 jsp를 사용했었는데 스프링 부트에서는 타임리프를 권장하는 것을 알게 되었고
