@@ -86,7 +86,9 @@
 <br><br>
 
 ## 📌패키징 구조
-![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/74f411f0-942b-4cc9-885b-a2b85383f81a)
+
+<img src="https://github.com/gambae/allTheKeboard-Project/assets/103255941/74f411f0-942b-4cc9-885b-a2b85383f81a" width="350" height="500">
+
 <br><br>
 
 ## 📌E-R Diagram
