@@ -81,21 +81,21 @@
 </table>
 <br>
 
-## 📌시스템 아키텍쳐
+## 📌 시스템 아키텍쳐
 ![images_prayme_post_6937cab3-5813-4b37-b4f5-b01c0eac7d7a_image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/36b56238-4ba0-495e-8971-76201f9cd92b)
 <br><br>
 
-## 📌패키징 구조
+## 📌 패키징 구조
 
 <img src="https://github.com/gambae/allTheKeboard-Project/assets/103255941/74f411f0-942b-4cc9-885b-a2b85383f81a" width="350" height="500">
 
-<br>
+<br><br>
 
-## 📌E-R Diagram
+## 📌 E-R Diagram
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/2e7e063b-c3f0-4fc3-ad9a-7ad46eb2559e)
 <br><br>
 
-## 📌레이아웃
+## 📌 레이아웃
 <br>
 
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/0ed9032a-4217-4955-b364-da83c40a6367)
@@ -115,9 +115,17 @@
 추후에는 vue.js 나 react를 공부해서 적용해 볼 예정입니다.
 <br><br>
 
+## 📌 테스트 코드
+
+![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/46d655c6-d504-4167-9d56-72cfb3f2b1fd)
+
+<br><br>
+
 ## ⭐ 주요 기능
 * <b>로그인/회원가입</b>
+
 <br>
+
 <img src="https://img.shields.io/badge/springsecurity-0ABF53F?style=for-the-badge&logo=springsecurity&logoColor=white">
 
 스프링 시큐리티를 활용하여 로그인/회원가입 기능을 구현하였습니다.
@@ -131,10 +139,13 @@ passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 
 아직 프로젝트에 적용해 보진 않았지만 나중에는 토큰 기반 인증 jwt를 적용해 볼 예정입니다.
 
 개인적으로는 이번 프로젝트에서 가장 개념적으로 어려웠던 부분이라고 생각합니다.
+
 <br><br>
 
 * <b>상품 등록 및 수정</b>
+
 <br>
+
 관리자 계정으로만 접근할수있으며 
 
 상품 테이블과 상품 이미지 테이블의 연관관계 매핑을 중점으로 설계하였습니다.
@@ -150,6 +161,7 @@ passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 
 <img src="https://github.com/gambae/allTheKeboard-Project/assets/103255941/7454dca0-d2a1-47a0-b91a-98a73a1fed22" width="300" height="400">
 
 파일에 관한 서비스 클래스를 따로 두어 등록, 삭제 기능을 메서드 형식으로 사용할 수 있도록 처리했습니다.
+
 <br><br>
 
 * <b>상품 관리</b>
@@ -157,6 +169,7 @@ passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/9c341565-3b26-4cd5-88e7-bf21e409cd52
 
 <br>
+
 상품을 조회하는 조건을 설정 후 페이징 기능을 통해 일정 개수의 상품만 불러오며
 
 선택한 상품 상세 페이지로 이동할 수 있는 기능을 구현하도록 설계하였습니다.
@@ -166,6 +179,7 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/9c341565-3b26-4
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/d1e9a23d-8edc-4585-865d-6131077c7c56)
 
 Querydsl을 이용해서 조건에 맞는 쿼리를 동적으로 쉽게 생성하고 비슷한 쿼리를 재활용할 수 있도록 하였습니다.
+
 <br><br>
 
 * <b>상품목록</b>
@@ -173,12 +187,14 @@ Querydsl을 이용해서 조건에 맞는 쿼리를 동적으로 쉽게 생성�
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/4c5f02bc-c0bb-4c3c-bac0-7af7271fae97
 
 <br>
+
 동일하게 Querydsl을 사용하여 페이징 처리 및 상품명으로 검색이 가능하도록 구현하였습니다.
 <br>
 
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/22cc0ad2-64af-4e6f-b0fd-d586d8538607)
 
 pagable 객체를 통해 보일 상품 개수와 페이지 수를 설정하였습니다.
+
 <br><br>
 
 * <b>상품 상세 페이지</b>
@@ -186,7 +202,9 @@ pagable 객체를 통해 보일 상품 개수와 페이지 수를 설정하였�
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/b97642ae-c85a-4084-a913-d2b578dec487
 
 <br>
+
 주문 및 장바구니 추가 기능을 제공하며 상품 데이터를 보여주고 제이쿼리를 통해 즉각적으로 뷰단에 적용되도록 설계했습니다.
+
 <br><br>
 
 * <b>주문 목록</b>
@@ -194,17 +212,27 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/b97642ae-c85a-4
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/c52d0162-7d41-4a93-963f-fc585422272c
 
 <br>
+
 상품을 주문하면 재고에서 주문 수량만큼 재고를 감소시키고 주문 수량이 재고 수보다 클 경우 주문이 되지않도록 설계했습니다.
 
 상품 주문에서 웹 페이지의 새로 고침 없이 서버에 주문을 요청하기 위해 비동기 방식을 사용하였습니다.
 
+<br>
+
 <img src="https://github.com/gambae/allTheKeboard-Project/assets/103255941/6978888e-cd77-4524-9319-dfc9f22c6519" width="500" height="400">
 
-<br>
+<br><br>
 
 * <b>장바구니</b>
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/a3393839-1d6f-441b-9e9c-71f0cbefcf0d
+
+<br>
+
+상품 상세 페이지에서 장바구니에 담을 수량을 선택하고 버튼을 클릭할 때 장바구니에 담기는 기능,
+장바구니에 들어있는 상품들을 조회하는 기능, 체크박스가 선택된 상품을 주문 및 삭제하는 기능을 중점으로 설계했습니다.
+
+<br><br>
 
 * <b>무중단 배포</b>
 
