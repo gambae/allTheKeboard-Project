@@ -151,7 +151,7 @@
 <br><br>
 
 ## ⭐ 주요 기능
-* <b>로그인/회원가입</b>
+* #### 로그인/회원가입
 
 <br>
 
@@ -171,7 +171,7 @@ passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 
 
 <br><br>
 
-* <b>상품 등록 및 수정</b>
+* #### 상품 등록 및 수정
 
 <br>
 
@@ -193,7 +193,7 @@ passwordencoding, csrf 등 간단해 보이는 로그인/로그아웃 기능에 
 
 <br><br>
 
-* <b>상품 관리</b>
+* #### 상품 관리
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/9c341565-3b26-4cd5-88e7-bf21e409cd52
 
@@ -211,7 +211,7 @@ Querydsl을 이용해서 조건에 맞는 쿼리를 동적으로 쉽게 생성�
 
 <br><br>
 
-* <b>상품 목록</b>
+* #### 상품 목록
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/4c5f02bc-c0bb-4c3c-bac0-7af7271fae97
 
@@ -226,7 +226,7 @@ pagable 객체를 통해 보일 상품 개수와 페이지 수를 설정하였�
 
 <br><br>
 
-* <b>상품 상세 페이지</b>
+* #### 상품 상세 페이지
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/b97642ae-c85a-4084-a913-d2b578dec487
 
@@ -236,7 +236,7 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/b97642ae-c85a-4
 
 <br><br>
 
-* <b>주문 목록</b>
+* #### 주문 목록
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/c52d0162-7d41-4a93-963f-fc585422272c
 
@@ -252,7 +252,7 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/c52d0162-7d41-4
 
 <br><br>
 
-* <b>장바구니</b>
+* #### 장바구니
 
 https://github.com/gambae/allTheKeboard-Project/assets/103255941/a3393839-1d6f-441b-9e9c-71f0cbefcf0d
 
@@ -263,7 +263,7 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/a3393839-1d6f-4
 
 <br><br>
 
-* <b>무중단 배포</b>
+* #### 무중단 배포
 
 ### 추후 개발 기능
  * <b>키보드 스위치 별 소리 확인</b>
