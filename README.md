@@ -3,7 +3,7 @@
 
 키보드 쇼핑몰 웹 사이트 개발 프로젝트
 
-http://www.allthekeyboard.kro.kr:8080/
+https://www.allthekeyboard.store
 <br><br>
 
 ## 👀 목차
@@ -275,7 +275,7 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/a3393839-1d6f-4
 
 빌드와 배포를 분리하기 위해 travis와 AWS s3를 이용했습니다
 
-~배포된 웹 앱을 제대로 서비스하기위해 letsencrypt로 ssl 인증을 받아 https 보안 프로토콜을 적용했으며,~
+배포된 웹 앱을 제대로 서비스하기위해 letsencrypt로 ssl 인증을 받아 https 보안 프로토콜을 적용했으며,
 
 가비아에서 도메인을 구입하고 AWS Route 53을 이용하여 도메인을 연결하였습니다.
 <br>
