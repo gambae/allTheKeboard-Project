@@ -270,8 +270,15 @@ https://github.com/gambae/allTheKeboard-Project/assets/103255941/a3393839-1d6f-4
 ![image](https://github.com/gambae/allTheKeboard-Project/assets/103255941/83cc9262-de35-436d-accc-94ca4dd4128c)
 
 <br>
-애플리케이션 출시에 있어서 지속적 통합과 지속적 배포를 위해 깃헙, travis, AWS CodeDeploy를 사용했으며 빌드와 배포를 분리하기 위해 travis와 AWS s3를 이용했습니다
-배포된 웹 앱을 제대로 서비스하기위해 letsencrypt로 ssl 인증을 받아 https 보안 프로토콜을 적용했으며, 가비아에서 도메인을 구입하고 AWS Route 53을 이용하여 도메인을 연결하였습니다.
+애플리케이션 출시에 있어서 지속적 통합과 지속적 배포를 위해 깃헙, travis, AWS CodeDeploy를 사용했으며
+
+
+빌드와 배포를 분리하기 위해 travis와 AWS s3를 이용했습니다
+
+배포된 웹 앱을 제대로 서비스하기위해 letsencrypt로 ssl 인증을 받아 https 보안 프로토콜을 적용했으며,
+
+가비아에서 도메인을 구입하고 AWS Route 53을 이용하여 도메인을 연결하였습니다.
+<br>
 
 ### [추후 개발 기능]
  * <b>키보드 스위치 별 소리 확인</b>
